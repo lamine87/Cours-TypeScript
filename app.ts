@@ -66,6 +66,60 @@ let myVariable : number | boolean | string = 30;
 
 }
  
+// const niveau = 10;
+// console.log(niveau);
+
+let variable = "test";
+function reset() : void {
+    let variable = "toto"
+    console.log(variable);
+}
+
+reset();
+console.log(variable);
+
+///// arrow fonctions
+
+function multiplier1(x:number , y:number) : number {
+
+    return x * y;1
+  }
+  console.log(multiplier1(2, 5));
 
 
+  const multiplier2 = (number1 : number, number2: number) =>number1 * number2
+
+  console.log(multiplier2(2, 5));
+
+//// Fonction sans argument qui dit bonjour
+const saluer = ()=> console.log("Bonjour");
+saluer();
+
+
+//// Fonction avec argument qui dit bonjour
+const saluer2 = (name: string)=> console.log("Bonjour: " +name);
+
+saluer2("Pipen");
+
+
+//// Fonction avec parametres par defaut
+const multiplier3 = (number1 : number,  number2: number = 100)=> number1 * number2;
+console.log(multiplier3(5));
+
+
+//// Spread
+const numbers = [2,10,11,12];
+console.log("biggest: " + Math.max(1,-22,500,400));
+console.log(Math.max(...numbers));
+
+//// Rest operation
+function consruireTableau(arg1: number, arg2: number): number[]{
+    return [arg1, arg2]
+}
+function consruireTableau_RestOperator(arg1: string, ...args: number[]){
+    return arg1 + args;
+}
+console.log(consruireTableau(10,20));
+console.log(consruireTableau_RestOperator("moi", 20, 15, 20, 50, 78));
+console.log(consruireTableau_RestOperator("moi", 20, 15, 20, 50, 78, 80, 2, 50));
 

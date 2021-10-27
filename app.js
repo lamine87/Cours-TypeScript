@@ -48,3 +48,50 @@ if (typeof valeurFinale == "number") {
 else {
     console.log("Type inconnu");
 }
+// const niveau = 10;
+// console.log(niveau);
+var variable = "test";
+function reset() {
+    var variable = "toto";
+    console.log(variable);
+}
+reset();
+console.log(variable);
+///// arrow fonctions
+function multiplier1(x, y) {
+    return x * y;
+    1;
+}
+console.log(multiplier1(2, 5));
+var multiplier2 = function (number1, number2) { return number1 * number2; };
+console.log(multiplier2(2, 5));
+//// Fonction sans argument qui dit bonjour
+var saluer = function () { return console.log("Bonjour"); };
+saluer();
+//// Fonction avec argument qui dit bonjour
+var saluer2 = function (name) { return console.log("Bonjour: " + name); };
+saluer2("Pipen");
+//// Fonction avec parametres par defaut
+var multiplier3 = function (number1, number2) {
+    if (number2 === void 0) { number2 = 100; }
+    return number1 * number2;
+};
+console.log(multiplier3(5));
+//// Spread
+var numbers = [2, 10, 11, 12];
+console.log("biggest: " + Math.max(1, -22, 500, 400));
+console.log(Math.max.apply(Math, numbers));
+//// Rest operation
+function consruireTableau(arg1, arg2) {
+    return [arg1, arg2];
+}
+function consruireTableau_RestOperator(arg1) {
+    var args = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
+    }
+    return arg1 + args;
+}
+console.log(consruireTableau(10, 20));
+console.log(consruireTableau_RestOperator("moi", 20, 15, 20, 50, 78));
+console.log(consruireTableau_RestOperator("moi", 20, 15, 20, 50, 78, 80, 2, 50));
